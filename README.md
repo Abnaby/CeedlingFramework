@@ -1,21 +1,3 @@
-<<<<<<< HEAD
-"# Ceedling_UnitTest" 
-
-
-## Getting Started
-First make sure Ruby is installed on you system 
-``` 
-ruby --version 
-ruby 2.7.8p225 (2023-03-30 revision 1f4d455848) [x64-mingw32]
-```
-If not Installed follow [embetronicx](https://embetronicx.com/tutorials/unit_testing/unit-testing-in-c-part-3-ceedling-installation/) to install framework.
-
-Second Run Command 
-```
-git clone https://github.com/Abnaby/Ceedling_UnitTest.git
-```
-you will find this file hierarchy, you can delete all of them expect `makefile`, `findSourceFiles.py` and `yml.py`
-=======
 # Automate Unit Test Process based on Ceedling Framwork  
 ## Getting Started
 First make sure Ruby and python is installed on you system 
@@ -31,27 +13,17 @@ If not Installed follow [embetronicx](https://embetronicx.com/tutorials/unit_tes
 
 Second Run Command 
 ```
-git clone https://github.com/Abnaby/CeedlingFramework.git
+λ git clone https://github.com/Abnaby/CeedlingFramework.git
 ```
 you will find this file hierarchy, you can delete all of them expect `makefile`and `*.py` files.
->>>>>>> 1cc6d87 (Automate Unit Test Process V0.1 - Under Development -)
 ```
 Ceedling_UnitTest/
 ├── img/
 ├── makefile
 ├── findSourceFiles.py
-<<<<<<< HEAD
 └── yml.py
 ```
-
-## Tunnable Parameters"
-=======
-├── editYml.py
-└── yml.py
-```
-
 ## Tunnable Parameters
->>>>>>> 1cc6d87 (Automate Unit Test Process V0.1 - Under Development -)
 to specify the project name add it in makefile variable: 
 ```makefile 
     PROJ_NAME = 
@@ -63,7 +35,7 @@ If the project source file exist in another directory you can add it in
 ## Creating A Project
 in the same directory name `Ceedling_UnitTest` run shell then write 
 ```
-    make create_project && cd PROJ_NAME
+λ make create_project && cd PROJ_NAME
 ```
 Output 
 ```
@@ -78,7 +50,7 @@ Project PROJ_NAME created
 to make a new module from scratch:
 * Makesure you are in `PROJ_NAME` dir, run `pwd` cmd
 ```
-    make create_modules 
+λ make create_modules 
 ```
 You will be asked to enter the module names with `,` as separator for example
 ```
@@ -127,15 +99,8 @@ If I need to execlude the module from testing process e.g. `test_b` add it in `m
 EXCLUDED_MODULES := test_b
 ```
 ## Remove The full Project
-<<<<<<< HEAD
-makesure you are at  `Ceedling_UnitTest` run cmd 
 ```
-    mingw32-make.exe remove_project
-=======
-makesure you are at  `Ceedling_UnitTest`
-```
-    make remove_project
->>>>>>> 1cc6d87 (Automate Unit Test Process V0.1 - Under Development -)
+ λ make remove_project
 ```
 you will be asked to enter the `PROJ_NAME`
 ```
@@ -143,8 +108,8 @@ you will be asked to enter the `PROJ_NAME`
 ```
 Output 
 ```
-Removing UART_BOOTLOADER ***********
-Folder UART_BOOTLOADER removed
+Removing PROJ_NAME ***********
+Folder PROJ_NAME removed
 ```
 if you got error 
 ```
@@ -154,9 +119,6 @@ Folder `PROJ_NAME` Content removed
 The folder content was deleted but you are inside the `PROJ_NAME` in terminal
 ```
     cd .. 
-<<<<<<< HEAD
     mingw32-make.exe remove_project
-=======
-    make remove_project
->>>>>>> 1cc6d87 (Automate Unit Test Process V0.1 - Under Development -)
 ```
+
