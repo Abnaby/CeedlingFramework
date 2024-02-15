@@ -1,6 +1,8 @@
 # Automate Unit Test Process based on Ceedling Framwork  
+
 ## Getting Started
 ---
+
 First make sure Ruby and python is installed on you system 
 ``` 
 λ ruby --version 
