@@ -1,7 +1,6 @@
 # Automate Unit Test Process based on Ceedling Framwork  
 
 ## Getting Started
----
 
 First make sure Ruby and python is installed on you system 
 ``` 
@@ -29,7 +28,7 @@ Ceedling_UnitTest/
 └── yml.py
 ```
 ## Tunnable Makefile Parameters
----
+
 to specify the project name add it in makefile variable: 
 ```makefile 
     PROJ_NAME = MY_PROJ
@@ -55,7 +54,7 @@ to add make program name
 MAKE = mingw32-make.exe
 ```
 ## Creating A Project
----
+
 in the same directory name `Ceedling_UnitTest` run shell then write 
 ```
 λ make create_project && cd PROJ_NAME
@@ -76,7 +75,7 @@ Project 'v1_Project' created!
 ```
 
 ## Creating A New Module From Scratch 
----
+
 to make a new module from scratch:
 * Makesure you are in `PROJ_NAME` dir, run `pwd` cmd
 ```
@@ -127,14 +126,14 @@ Ceedling_UnitTest/
 ```
 
 ## Execlude Module From Testing process 
----
+
 If I need to execlude the module from testing process e.g. `test_b` add it in `makefile`
 > Make sure the edits happen in `makefile` inside the PROJ_NAMEs
 ```
 EXCLUDED_MODULES := test_b
 ```
 ## Remove The full Project
----
+
 ```
  λ make remove_project
 ```
@@ -159,21 +158,21 @@ The folder content was deleted but you are inside the `PROJ_NAME` in terminal
 ```
 
 ## Run Unit Tests 
----
+
 Just 
 ```
     make test
 ```
 
 ## Run Coverage 
----
+
 Just 
 ```
     make coverage
 ```
 
 ## Known issues
----
+
 - The Project creation where `make create_project` and main `SourceFiles` project `must be in the same directory`
 ```
     G:/
@@ -185,5 +184,7 @@ Just
     │  └── *.cfg
     └── SourceFiles
 ```
+- Sometimes coverage reports aren't updated please run `ceedling gcov:all` before running `make coverage`
 ## Contributing  
 Bug reports, feature requests, and so on are always welcome. Feel free to leave a note in the Issues section.
+
