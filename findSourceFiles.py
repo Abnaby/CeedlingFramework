@@ -11,7 +11,7 @@ import os
 import sys
 import yaml
 ################################### ENABLE_DEBUG_SEC #########################
-DEBUG_ENB = True
+DEBUG_ENB = False
 ################################### END OF DEBUG SEC #########################
 
 # Parent directory path
