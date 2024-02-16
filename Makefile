@@ -1,23 +1,26 @@
 #################### USER SPECIFIC #########################
 # The name of the project
-PROJ_NAME = Temp
+PROJ_NAME = 
 
 # Project source path (absolute or relative to this Makefile) - used by ceedling for testing
-PROJ_DIR := "G:/COURSES/UnitTest/Ceedling/"
+PROJ_DIR := 
 
 # List of modules to exclude from testing
 EXCLUDED_MODULES := 
 
+# List of unit test suufix e.g. unit_test unit-test 
+UNIT_TEST_POSS_SUFFIXES := 
 
 #################### PROGRAM SPECIFIC #########################
 PWD := $(shell pwd)
 LAST_FOLDER := $(shell basename "$(PWD)")
-SRC_FILES := $(wildcard test/*.c) $(wildcard $(PROJ_DIR)/**/unit_test/test_*.c)
+SRC_FILES := $(wildcard test/*.c)
+$(foreach suffix,$(UNIT_TEST_POSS_SUFFIXES),$(eval SRC_FILES += $(wildcard $(PROJ_DIR)/**/$(suffix)/test_*.c)))
 MAKE = mingw32-make.exe
 #################### PROGRAM  #########################
 .PHONY: run_all_except_task_scheduler
 test: run_all_except_task_scheduler
-
+	$(MAKE) EndSchema
 
 
 
@@ -28,19 +31,19 @@ coverage :
 
 create_project: init 
 	@cd $(PROJ_NAME);\
-	$(MAKE) ExtractSourceFiles ;\
-	$(MAKE) EndSchema
-
+	python findSourceFiles.py "$(PROJ_DIR)";\
+	python editYml.py ;\
+	rm -f *.py;\
+	rm -f *.txt;
+	
 init: startSchema # Main project Creation 
 	@ceedling new ${PROJ_NAME} ; \
 	cp -f Makefile ${PROJ_NAME} ; \
-	cp -f yml.py ${PROJ_NAME} ; \
-	cp -f findSourceFiles.py ${PROJ_NAME} ; \
-	cp -f editYml.py ${PROJ_NAME} ; \
-	echo "Project ${PROJ_NAME} created" ; \
+	cp -f *.py ${PROJ_NAME} ; \
 	cd ${PROJ_NAME}; \
-    python $(CURDIR)/yml.py ;\
-	rm -f yml.py\
+	python $(CURDIR)/yml.py ;\
+	rm -f yml.py;
+
 
 create_modules:
 	@read -p "Enter modules name: " MODULE_NAME; \
@@ -70,9 +73,10 @@ clean-test: # core is for core dumps!
 
 # Define a target to run all tests except specified modules
 run_all_except_task_scheduler:
-	@echo "Running tests for all modules except $(EXCLUDED_MODULES):"
+	@echo "Running tests for all modules except $(EXCLUDED_MODULES):";
 	@for file in $(SRC_FILES); do \
 		module=$$(basename $$file .c); \
+		echo "*********************************** Testing $$module ****************************************"; \
 		exclude=0; \
 		for excluded_module in $(EXCLUDED_MODULES); do \
 			if [ $$module = "$$excluded_module" ]; then \
@@ -89,8 +93,7 @@ run_all_except_task_scheduler:
 	done
 
 
-ExtractSourceFiles:
-	@python findSourceFiles.py "$(PROJ_DIR)"	
+		
 
 
 startSchema:

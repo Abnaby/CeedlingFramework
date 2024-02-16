@@ -2,7 +2,7 @@ import os
 import sys
 import yaml
 ################################### ENABLE_DEBUG_SEC #########################
-DEBUG_ENB = False
+DEBUG_ENB = True
 ################################### END OF DEBUG SEC #########################
 
 # Parent directory path
@@ -70,6 +70,17 @@ def editPath(param_originalPath):
         param_originalPath[i] = param_originalPath[i].replace('\\', '/')
 
 
+def remove_leading_hyphen(found_files):
+    for i in range(len(found_files)):
+        # Remove leading '-' character
+        # print("found_files[i] = " + found_files[i])
+        if found_files[i].startswith('-'):
+            found_files[i] = found_files[i][1:].strip()
+
+
+# Example usage:
+remove_leading_hyphen('unit_test_paths.txt')
+
 ##########################################  ERROR VAR #######################################################
 NO_ERROR = 0
 INVALID_PATH = 1
@@ -88,6 +99,13 @@ if __name__ == '__main__':
         print(NoFilesFound)
     else:
         fillUnitTestPaths(found_files)
+        # Write the list of found .c files to a YAML file
+        # with open(OUTPUT_FILE, 'w') as txt_file:
+        #     yaml.dump(found_files, txt_file)
+        # with open(UNIT_TEST_DIR_PATHS_FILE_NAME, 'w') as txt_file:
+        #     yaml.dump(UNIT_TEST_PATHS, txt_file)
+        # with open(SRC_FILE_DIR_PATHS_FILE_NAME, 'w') as txt_file:
+        #     yaml.dump(SRC_FILE_PATHS, txt_file)
         with open(OUTPUT_FILE, 'w') as fp:
             for item in found_files:
                 # write each item on a new line

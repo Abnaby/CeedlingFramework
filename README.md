@@ -21,6 +21,7 @@ Ceedling_UnitTest/
 ├── img/
 ├── makefile
 ├── findSourceFiles.py
+├── editYml.py
 └── yml.py
 ```
 ## Tunnable Parameters
@@ -31,6 +32,10 @@ to specify the project name add it in makefile variable:
 If the project source file exist in another directory you can add it in 
 ```
     PROJ_DIR :=  
+```
+modules to be excuted from testing process `Can redefine it later in makfile inside PROJ_NAME`
+```
+    EXCLUDED_MODULES := 
 ```
 ## Creating A Project
 in the same directory name `Ceedling_UnitTest` run shell then write 
@@ -122,3 +127,8 @@ The folder content was deleted but you are inside the `PROJ_NAME` in terminal
     mingw32-make.exe remove_project
 ```
 
+## Run Unit Tests 
+Just 
+```
+    make test
+```
