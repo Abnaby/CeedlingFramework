@@ -1,3 +1,11 @@
+"""
+Filename: yml.py
+Author: Mohamed Abd El-Naby
+Date created:  14-02-2024
+Last modified: 18-02-2024
+Python Version: V1.0
+Description: This script will add required plugins -gcov- into yml file
+"""
 # Define the target string to search for
 target_string = "- module_generator"
 plugin_string = ":plugins"

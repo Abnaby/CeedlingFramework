@@ -1,5 +1,6 @@
 # Automate Unit Test Process based on Ceedling Framwork  
 ## Getting Started
+---
 First make sure Ruby and python is installed on you system 
 ``` 
 λ ruby --version 
@@ -15,19 +16,21 @@ Second Run Command
 ```
 λ git clone https://github.com/Abnaby/CeedlingFramework.git
 ```
-you will find this file hierarchy, you can delete all of them expect `makefile`and `*.py` files.
+you will find this file hierarchy, you can delete all of them expect `makefile`, `*.py`, and`.cfg`   files.
 ```
 Ceedling_UnitTest/
 ├── img/
 ├── makefile
 ├── findSourceFiles.py
 ├── editYml.py
+├── gcovr.cfg
 └── yml.py
 ```
-## Tunnable Parameters
+## Tunnable Makefile Parameters
+---
 to specify the project name add it in makefile variable: 
 ```makefile 
-    PROJ_NAME = 
+    PROJ_NAME = MY_PROJ
 ```
 If the project source file exist in another directory you can add it in 
 ```
@@ -35,23 +38,43 @@ If the project source file exist in another directory you can add it in
 ```
 modules to be excuted from testing process `Can redefine it later in makfile inside PROJ_NAME`
 ```
-    EXCLUDED_MODULES := 
+    EXCLUDED_MODULES :=
+```
+to List of unit test suufix e.g. unit_test unit-test 
+```
+UNIT_TEST_POSS_SUFFIXES := unit_test unit-test
+```
+to add a Coverage output path e.g. add an `html` folder in the same directory of project creation.
+```
+COVERAGE_OUTPUT_PATH := html
+```
+to add make program name
+```
+MAKE = mingw32-make.exe
 ```
 ## Creating A Project
+---
 in the same directory name `Ceedling_UnitTest` run shell then write 
 ```
 λ make create_project && cd PROJ_NAME
 ```
 Output 
 ```
+*******************************************************
+*            PROJECT NAME : MY_PROJ
+*            START TIME   : 12 : 43: 04
+*******************************************************
 Welcome to Ceedling!
-    create  PROJ_NAME/project.yml
-Project 'PROJ_NAME' created!
- - Execute 'ceedling help' from PROJ_NAME to view available test & build tasks
-Project PROJ_NAME created
+      create  v1_Project/project.yml
+
+Project 'v1_Project' created!
+ - Execute 'ceedling help' from v1_Project to view available test & build tasks
+
+                EVERYTHING GENERATED
 ```
 
 ## Creating A New Module From Scratch 
+---
 to make a new module from scratch:
 * Makesure you are in `PROJ_NAME` dir, run `pwd` cmd
 ```
@@ -93,17 +116,23 @@ Ceedling_UnitTest/
 │   │   ├── test_a.c
 │   │   ├── test_b.c
 │   │   └── test_c.c
-│   ├── makefile
+│   ├── gcovr.cfg
 ├── makefile
+├── findSourceFiles.py
+├── editYml.py
+├── gcovr.cfg
 └── yml.py
 ```
 
 ## Execlude Module From Testing process 
+---
 If I need to execlude the module from testing process e.g. `test_b` add it in `makefile`
+> Make sure the edits happen in `makefile` inside the PROJ_NAMEs
 ```
 EXCLUDED_MODULES := test_b
 ```
 ## Remove The full Project
+---
 ```
  λ make remove_project
 ```
@@ -128,7 +157,31 @@ The folder content was deleted but you are inside the `PROJ_NAME` in terminal
 ```
 
 ## Run Unit Tests 
+---
 Just 
 ```
     make test
 ```
+
+## Run Coverage 
+---
+Just 
+```
+    make coverage
+```
+
+## Known issues
+---
+- The Project creation where `make create_project` and main `SourceFiles` project `must be in the same directory`
+```
+    G:/
+    ├── Ceedling_UnitTest/
+    │  ├── PROJ_NAME
+    │  ├── makefile
+    │  ├── *.py
+    │  ├── project.yml
+    │  └── *.cfg
+    └── SourceFiles
+```
+## Contributing  
+Bug reports, feature requests, and so on are always welcome. Feel free to leave a note in the Issues section.

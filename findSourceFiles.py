@@ -1,3 +1,12 @@
+"""
+Filename: findSourceFiles.py
+Author: Mohamed Abd El-Naby
+Date created:  14-02-2024
+Last modified: 18-02-2024
+Python Version: V1.0
+Description: This script will recursively search for .c files within the given directory input by the makefile 
+"""
+
 import os
 import sys
 import yaml
@@ -82,9 +91,9 @@ def remove_leading_hyphen(found_files):
 remove_leading_hyphen('unit_test_paths.txt')
 
 ##########################################  ERROR VAR #######################################################
-NO_ERROR = 0
-INVALID_PATH = 1
-NoFilesFound = 2
+NO_ERROR = "                EVERYTHING GENERATED                 "
+INVALID_PATH = "                INVALID PATH PROVIDED                "
+NoFilesFound = "                NO FILES FOUND IN DIRECTORY          "
 ##########################################  MAIN #############################################################
 if __name__ == '__main__':
     if DEBUG_ENB == False:
