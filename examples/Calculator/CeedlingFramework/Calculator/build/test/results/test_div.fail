@@ -1,0 +1,18 @@
+---
+:source:
+  :path: G:/COURSES/UnitTest/Ceedling/0.Repo/examples/Calculator/Calculator_proj/div/unit-test
+  :file: test_div.c
+:successes: []
+:failures:
+- :test: testdiv
+  :line: 14
+  :message: Expected 4 Was 3
+  :unity_test_time: 0
+:ignores: []
+:counts:
+  :total: 1
+  :passed: 0
+  :failed: 1
+  :ignored: 0
+:stdout: []
+:time: 0.11223220000101719

@@ -1,0 +1,18 @@
+---
+:source:
+  :path: G:/COURSES/UnitTest/Ceedling/0.Repo/examples/Calculator/Calculator_proj/Sum/unit_test
+  :file: test_sum.c
+:successes:
+- :test: test_sum
+  :line: 13
+  :message: ''
+  :unity_test_time: 0
+:failures: []
+:ignores: []
+:counts:
+  :total: 1
+  :passed: 1
+  :failed: 0
+  :ignored: 0
+:stdout: []
+:time: 0.04121889999987616

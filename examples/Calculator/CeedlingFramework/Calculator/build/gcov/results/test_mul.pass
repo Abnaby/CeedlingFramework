@@ -1,0 +1,18 @@
+---
+:source:
+  :path: G:/COURSES/UnitTest/Ceedling/0.Repo/examples/Calculator/Calculator_proj/mul/unit-test
+  :file: test_mul.c
+:successes:
+- :test: test_mul
+  :line: 11
+  :message: ''
+  :unity_test_time: 0
+:failures: []
+:ignores: []
+:counts:
+  :total: 1
+  :passed: 1
+  :failed: 0
+  :ignored: 0
+:stdout: []
+:time: 0.10838560000047437
