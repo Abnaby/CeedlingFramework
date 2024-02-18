@@ -1,0 +1,112 @@
+Running tests for all modules except :
+*********************************** Testing test_pow ****************************************
+Running test_pow
+
+
+Test 'test_pow.c'
+-----------------
+Running test_pow.out...
+
+--------------------
+OVERALL TEST SUMMARY
+--------------------
+TESTED:  1
+PASSED:  1
+FAILED:  0
+IGNORED: 0
+
+*********************************** Testing test_abs ****************************************
+Running test_abs
+
+
+Test 'test_abs.c'
+-----------------
+Running test_abs.out...
+
+--------------------
+OVERALL TEST SUMMARY
+--------------------
+TESTED:  1
+PASSED:  1
+FAILED:  0
+IGNORED: 0
+
+*********************************** Testing test_sub ****************************************
+Running test_sub
+
+
+Test 'test_sub.c'
+-----------------
+Running test_sub.out...
+
+--------------------
+OVERALL TEST SUMMARY
+--------------------
+TESTED:  1
+PASSED:  1
+FAILED:  0
+IGNORED: 0
+
+*********************************** Testing test_sum ****************************************
+Running test_sum
+
+
+Test 'test_sum.c'
+-----------------
+Running test_sum.out...
+
+--------------------
+OVERALL TEST SUMMARY
+--------------------
+TESTED:  1
+PASSED:  1
+FAILED:  0
+IGNORED: 0
+
+*********************************** Testing test_div ****************************************
+Running test_div
+
+
+Test 'test_div.c'
+-----------------
+Generating runner for test_div.c...
+Compiling test_div_runner.c...
+Compiling test_div.c...
+Linking test_div.out...
+Running test_div.out...
+
+-------------------
+FAILED TEST SUMMARY
+-------------------
+[test_div.c]
+  Test: testdiv
+  At line (14): "Expected 4 Was 3"
+
+--------------------
+OVERALL TEST SUMMARY
+--------------------
+TESTED:  1
+PASSED:  0
+FAILED:  1
+IGNORED: 0
+
+*********************************** Testing test_mul ****************************************
+Running test_mul
+
+
+Test 'test_mul.c'
+-----------------
+Running test_mul.out...
+
+--------------------
+OVERALL TEST SUMMARY
+--------------------
+TESTED:  1
+PASSED:  1
+FAILED:  0
+IGNORED: 0
+
+mingw32-make.exe EndSchema
+mingw32-make.exe[1]: Entering directory 'G:/COURSES/UnitTest/Ceedling/0.Repo/examples/Calculator/CeedlingFramework/Calculator'
+****************** EndSchema ******************
+mingw32-make.exe[1]: Leaving directory 'G:/COURSES/UnitTest/Ceedling/0.Repo/examples/Calculator/CeedlingFramework/Calculator'
